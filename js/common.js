@@ -72,7 +72,7 @@ $(window).load(function(){
     }
     
     for(i = 0; i < porfol_length; i++){
-        $("#portfolio .width_con ul.pofol li").eq(i).find("a.go_site").attr("href", "portfolio/"+portfolio_array[i][0]);
+        $("#portfolio .width_con ul.pofol li").eq(i).find("a.go_site").attr("href", "portfolio/"+portfolio_array[i][0]+"/index.html");
         $("#portfolio .width_con ul.pofol li").eq(i).find("h3").html(portfolio_array[i][1]);
         $("#portfolio .width_con ul.pofol li").eq(i).find("h2").html(portfolio_array[i][2]);
         $("#portfolio .width_con ul.pofol li").eq(i).find(".period h4").html(portfolio_array[i][3]);
