@@ -31,6 +31,7 @@ function App() {
 
   let [sns_view, setSns_view] = useState(false);
   let [open_nav, setOpen_nav] = useState(false);
+  let [folding, setFolding] = useState(true);
 
   useEffect(()=>{
     if(basic_data){
@@ -95,25 +96,25 @@ function App() {
                   basic_data.map_show == "Y" ? <li className='map'><Link onClick={()=>{dispatch(change_page('map on'))}} to="/map">오시는길</Link></li> : null
                 }
               </ul>
-              <div className='fn_btn'>
-                {/* <div className='login_con'>
-                  <FontAwesomeIcon className='login_btn' icon={faUser} />
-                  <p>로그인</p>
-                </div> */}
-                {
-                  basic_data.link_menu_show == "Y" ? 
+              {
+                basic_data.link_menu_show == "Y" ?
+                  <div className='fn_btn'>
+                  {/* <div className='login_con'>
+                    <FontAwesomeIcon className='login_btn' icon={faUser} />
+                    <p>로그인</p>
+                  </div> */} 
                   <div className='sns_con' onClick={()=>{setSns_view(!sns_view)}}>
                     <FontAwesomeIcon className='sns_btn' icon={faLink} />
                     <p>SNS</p>
+                  </div>
                     <ul className={sns_view ? 'sns_list on' : 'sns_list'}>
                       {basic_data.sns_link.length > 0 ? basic_data.sns_link.map(function(a, i){
                         return(<Dropsns data={basic_data.sns_link} key={i} val={i}></Dropsns>)
                       }) : null}
                     </ul>
                   </div>
-                  : null
-                }
-              </div>
+                : null
+              }
             </div>
             <div className='mob_con'>
               <div className="open_nav" onClick={()=>{setOpen_nav(!open_nav)}}>
@@ -174,36 +175,37 @@ function App() {
           <Route path="/map" element={ <Map></Map> } />
           <Route path="/more_board" element={ <More_board></More_board> } />
         </Routes>
-        {
-          headerClass !== '' ?
-            <div className='footer_con'>
-              <h5>{basic_data.company_name}</h5>
-              <p>{basic_data.footer_copy}<br></br>Copyrightⓒ 2023 Hunay Studio All rights reserved.</p>
-            </div>
-          : null
-        }
-        <div className='bottom_btn_con'>
+        <div className={folding ? 'footer_con folding' : 'footer_con'}>
           <div className='width_con'>
-            {
-              basic_data.naver_reserve_show == "Y" ?
-                <div className='naver_con'>
-                  <a href={basic_data.naver_reserve} target='_blank'>
-                    <img src='img/header/naver.png'></img>
-                    <p>예약하기</p>
-                  </a>
-                </div>
-              : null
-            }
-            {
-              basic_data.kakao_channel_show == "Y" ?
-                <div className='kakao_con'>
-                  <a href={basic_data.kakao_channel} target='_blank'>
-                    <img src='img/header/kakao.png'></img>
-                    <p>카톡채널추가</p>
-                  </a>
-                </div>
-              : null
-            }
+            <div className="tit">
+              <h5 onClick={()=>{setFolding(!folding);}}>{basic_data.company_name}{folding ? <span>▲</span> : <span>▼</span>}</h5>
+              <p>Copyrightⓒ 2023 Hunay Studio All rights reserved.</p>
+            </div>
+            <p className='footer_desc'>{basic_data.footer_copy}<br></br>Copyrightⓒ 2023 Hunay Studio All rights reserved.</p>
+            <div className='bottom_btn_con'>
+              <div className='inner'>
+                {
+                  basic_data.naver_reserve_show == "Y" ?
+                    <div className='naver_con'>
+                      <a href={basic_data.naver_reserve} target='_blank'>
+                        <img src='/img/header/naver.png'></img>
+                        <p>예약하기</p>
+                      </a>
+                    </div>
+                  : null
+                }
+                {
+                  basic_data.kakao_channel_show == "Y" ?
+                    <div className='kakao_con'>
+                      <a href={basic_data.kakao_channel} target='_blank'>
+                        <img src='img/header/kakao.png'></img>
+                        <p>카톡채널추가</p>
+                      </a>
+                    </div>
+                  : null
+                }
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -26,12 +26,12 @@ span {font-size: inherit; font-weight: inherit; color: inherit; line-height: inh
 #header .width_con .logo_con {}
 #header .width_con .logo_con a {}
 #header .width_con .logo_con a img {max-width: 165px; object-fit: cover;}
-#header .width_con .nav_con {display: flex; justify-content: space-between;}
-#header .width_con .nav_con .fn_btn {display: flex; align-items: center;}
-#header .width_con .nav_con .fn_btn > div {position: relative; margin: 0 10px; cursor: pointer;}
+#header .width_con .nav_con {display: flex; justify-content: space-between; height: 100%;}
+#header .width_con .nav_con .fn_btn {position: relative; display: flex; justify-content: center;  align-items: center; width: 72px; height: 100%; background: #fff; border: 1px solid #E0E0E0; border-top: none; border-bottom: none;}
+#header .width_con .nav_con .fn_btn > div {position: relative; cursor: pointer;}
 #header .width_con .nav_con .fn_btn div {text-align: center;}
-#header .width_con .nav_con .fn_btn div p {font-size: 0.6rem; line-height: 1rem; font-weight: 700; color: #fff;}
-#header .width_con .nav_con .fn_btn div svg {color: #fff;}
+#header .width_con .nav_con .fn_btn div p {font-size: 0.6rem; line-height: 1rem; font-weight: 700; color: #999;}
+#header .width_con .nav_con .fn_btn div svg {color: #999;}
 #header .width_con .mob_con {display: none;}
 #header .width_con .mob_con .open_nav {position: relative; width: 30px; height: 24px;}
 #header .width_con .mob_con .open_nav:before {position: absolute; top: 0; left: 0; width: 100%; content: ''; height: 3px; background: #000;}
@@ -39,9 +39,8 @@ span {font-size: inherit; font-weight: inherit; color: inherit; line-height: inh
 #header .width_con .mob_con .open_nav div {position: absolute; top: 50%; left: 0; width: 100%; height: 3px; background: #000; transform: translateY(-50%);}
 #header.on .width_con .mob_con .open_nav:before,
 #header.on .width_con .mob_con .open_nav:after,
-#header.on .width_con .mob_con .open_nav div {background: #000;}
-#header.on .width_con .nav_con .fn_btn div p,
-#header.on .width_con .nav_con .fn_btn div svg {color: #999;}
+#header.on .width_con .mob_con .open_nav div {background: #999;}
+#header .width_con .mob_con span {font-size: 0.6rem; line-height: 1rem; font-weight: 700; color: #999;}
 #header .width_con .nav_con .fn_btn .sns_con .sns_list {position: absolute; top: calc(100% + 20px); left: 50%; display: none; padding: 20px 25px; background: #fff; border: 1px solid #E0E0E0; transform: translateX(-50%);}
 #header .width_con .nav_con .fn_btn .sns_con .sns_list.on {display: block;}
 #header .width_con .nav_con .fn_btn .sns_con .sns_list li {margin: 0 0 10px 0;}
@@ -65,9 +64,24 @@ span {font-size: inherit; font-weight: inherit; color: inherit; line-height: inh
 #header.map .width_con .nav_con ul li.map a {color: #fff;}
 
 
-.footer_con {position: absolute; bottom: 100px; left: 20%; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 100%; padding: 0;}
-.footer_con h5 {font-size: 0.7rem; line-height: 1.1rem; font-weight: 700; color: #999;}
-.footer_con p {font-size: 0.6rem; line-height: 1rem; font-weight: 400; color: #999;}
+.footer_con {position: fixed; bottom: 0; left: 0; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 100%; padding: 18px 0; background: #212121;}
+.footer_con.folding {padding: 7px 0;}
+.footer_con .width_con {}
+.footer_con .width_con .tit {display: flex; justify-content: space-between; align-items: center; width: 100%;}
+.footer_con .width_con .tit h5 {font-size: 0.7rem; line-height: 1.1rem; font-weight: 700; color: #999; cursor: pointer;}
+.footer_con .width_con .tit p {font-size: 0.7rem; line-height: 1.1rem; font-weight: 400; color: #999;}
+.footer_con .width_con p.footer_desc {height: auto; font-size: 0.6rem; line-height: 1rem; font-weight: 400; color: #999; opacity: 1;}
+.footer_con.folding .width_con p.footer_desc {height: 0; opacity: 0;}
+.footer_con .bottom_btn_con {position: absolute;  top: -62px; right: 0;}
+.footer_con.folding .bottom_btn_con {top: -51px;}
+.footer_con .bottom_btn_con .inner {position: relative; display: flex; justify-content: center;}
+.footer_con .bottom_btn_con .inner > div {display: flex; justify-content: center; align-items: center; padding: 10px 35px; border-radius: 4px 4px 0px 0px;}
+.footer_con .bottom_btn_con .inner .naver_con {background: #2DB400;}
+.footer_con .bottom_btn_con .inner .kakao_con {background: #FFDE00;}
+.footer_con .bottom_btn_con .inner > div a {display: flex; justify-content: center; align-items: center; width: 100%;}
+.footer_con .bottom_btn_con .inner > div img {width: 20px; margin: 0 5px 0 0;}
+.footer_con .bottom_btn_con .inner > div p {color: #fff; font-size: 0.8rem; line-height: 1.2rem; font-weight: 700;}
+.footer_con .bottom_btn_con .inner .kakao_con p {color: #231815;}
 
 
 .App .mob_nav {position: absolute; top: 0; right: -300px; display: block; width: 300px; height: 100vh; padding: 25px 10px; background: #F5F5F5; transition: all 300ms ease-in-out; z-index: 9999999;}
@@ -89,17 +103,6 @@ span {font-size: inherit; font-weight: inherit; color: inherit; line-height: inh
 .App .mob_nav .row3 ul {margin: 20px 0 0 0;}
 .App .mob_nav .row3 ul li {padding: 15px 0; border-bottom: 1px solid #E0E0E0;}
 .App .mob_nav .row3 ul li a {font-size: 0.7rem; line-height: 1.1rem; font-weight: 500;}
-
-
-.bottom_btn_con {position: fixed; bottom: 0; left: 0; width: 100%;}
-.bottom_btn_con .width_con {position: relative; display: flex; justify-content: center;}
-.bottom_btn_con .width_con > div {display: flex; justify-content: center; align-items: center; width: 50%; padding: 10px 0;}
-.bottom_btn_con .width_con .naver_con {background: #2DB400;}
-.bottom_btn_con .width_con .kakao_con {background: #FFDE00;}
-.bottom_btn_con .width_con > div a {display: flex; justify-content: center; align-items: center; width: 100%;}
-.bottom_btn_con .width_con > div img {margin: 0 10px 0 0;}
-.bottom_btn_con .width_con > div p {color: #fff; font-size: 1rem; line-height: 1.4rem; font-weight: 700;}
-.bottom_btn_con .width_con .kakao_con p {color: #231815;}
 
 
 .sections.view {}
@@ -288,7 +291,12 @@ span {font-size: inherit; font-weight: inherit; color: inherit; line-height: inh
 @media screen and (max-width:960px){}
 @media screen and (max-width:520px){
 
-  .footer_con {left: 10px;}
+  .footer_con {}
+  .footer_con .width_con .tit {flex-direction: column; align-items: flex-start;}
+  .footer_con .width_con .tit p {display: none;}
+  .footer_con.folding .width_con .tit p {display: block;}
+  .footer_con .bottom_btn_con {width: 100%;}
+  .footer_con .bottom_btn_con .inner > div {width: 50%; border-radius: 0;}
 
   .section_01 .title_con {top: 40%;}
 
