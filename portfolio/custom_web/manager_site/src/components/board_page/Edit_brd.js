@@ -83,7 +83,7 @@ function Edit_brd(){
                     formData.append('board_no', store.board_no);
                     formData.append('table', 'admin_board');
                     if(window.confirm('수정하시겠습니까?')){
-                      axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).then((result)=>{
+                      axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).then((result)=>{
                         console.log(result);
                         alert('수정되었습니다');
                         navigate('/board');

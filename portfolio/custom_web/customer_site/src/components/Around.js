@@ -27,7 +27,7 @@ function Around(props){
   useMemo(()=>{
     $.ajax({
       type: "GET",
-      url: "http://hunay.co.kr/portfolio/custom_web/get.php",
+      url: "https://hunay6650.cafe24.com/portfolio/custom_web/get.php",
       data: {
           table:'admin_around'
       },
@@ -40,7 +40,7 @@ function Around(props){
     });
     $.ajax({
       type: "GET",
-      url: "http://hunay.co.kr/portfolio/custom_web/slide.php",
+      url: "https://hunay6650.cafe24.com/portfolio/custom_web/slide.php",
       data: {
           table:'slide_around'
       },

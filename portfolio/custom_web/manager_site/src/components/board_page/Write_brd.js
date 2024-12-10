@@ -72,7 +72,7 @@ function Write_brd(){
                   if($(".write_title").val() == ''){
                     alert('제목을 입력해주세요.')
                   }else{
-                    axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).catch(()=>{
+                    axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).catch(()=>{
                       alert("데이터 전송이 실패하였습니다.");
                     }).then((result)=>{
                       console.log(result);

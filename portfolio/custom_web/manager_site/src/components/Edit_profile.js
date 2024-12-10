@@ -34,7 +34,7 @@ function Edit_profile(){
   useMemo(()=>{
     return $.ajax({
       type: "GET",
-      url: "http://hunay.co.kr/portfolio/custom_web/get.php",
+      url: "https://hunay6650.cafe24.com/portfolio/custom_web/get.php",
       data: {
           table:'admin_profile'
       },
@@ -75,7 +75,7 @@ function Edit_profile(){
                   <label>
                     <input type="file" name="img" accept="image/png, image/jpeg" onChange={(e)=>{preview(e.target.files)}}></input>
                     <div className="upload_img">
-                      {upload_logo_img == '' || upload_logo_img == null ? <img src="img/header/profile_base.png"></img> : profile.img_url == '' && upload_logo_img !== '' ? <img src={upload_logo_img} alt="이미지 경로를 확인해주세요"></img> : <img src={"data:image;base64,"+upload_logo_img} alt="이미지 경로를 확인해주세요"></img>}
+                      {upload_logo_img == '' || upload_logo_img == null ? <img src="img/header/profile_base.png"></img> : profile.img_url == '' && upload_logo_img !== '' ? <img src={upload_logo_img} alt="이미지 경로를 확인해주세요"></img> : profile.img_url == upload_logo_img ? <img src={"data:image;base64,"+upload_logo_img} alt="이미지 경로를 확인해주세요"></img> : <img src={upload_logo_img} alt="이미지 경로를 확인해주세요"></img>}
                     </div>
                   </label>
                   {
@@ -99,13 +99,13 @@ function Edit_profile(){
                   console.log(key, value);
                  }
                 if(window.confirm("저장하시겠습니까?")){
-                  axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).then((result)=>{
+                  axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).then((result)=>{
                     console.log(result);
                     alert('저장되었습니다');
-                    window.location.href = 'http://hunay.co.kr/portfolio/custom_web/manager/';
+                    window.location.href = 'https://hunay6650.cafe24.com/portfolio/custom_web/manager/';
                   }).catch(()=>{
                     alert('서버와의 연결이 끊겼습니다. 잠시 후 다시 시도해주십시오.');
-                    window.location.href = 'http://hunay.co.kr/portfolio/custom_web/manager/';
+                    window.location.href = 'https://hunay6650.cafe24.com/portfolio/custom_web/manager/';
                   });
                 }
               }}><span>변경 사항 저장</span></div>

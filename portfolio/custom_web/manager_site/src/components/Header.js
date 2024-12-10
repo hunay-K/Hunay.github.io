@@ -36,7 +36,7 @@ function Header(){
   useMemo(()=>{
     return $.ajax({
       type: "GET",
-      url: "http://hunay.co.kr/portfolio/custom_web/get.php",
+      url: "https://hunay6650.cafe24.com/portfolio/custom_web/get.php",
       data: {
           table:'admin_profile'
       },
@@ -64,7 +64,7 @@ function Header(){
               <Link to="/edit_profile">프로필 수정</Link>
             </div>
             <div className='link_con'>
-              <a href='http://hunay.co.kr/portfolio/custom_web/custom' target='_blank'>홈페이지</a>
+              <a href='https://hunay6650.cafe24.com/portfolio/custom_web/custom' target='_blank'>홈페이지</a>
               <a href='' onClick={()=>{
                 if(window.confirm('로그아웃 하시겠습니까?')){
                   log_out();

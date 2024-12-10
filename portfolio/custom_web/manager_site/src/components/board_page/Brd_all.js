@@ -159,7 +159,7 @@ function Rows(props){
               formData.append('purpose', 'del_board');
               formData.append('table', 'admin_board');
               if(window.confirm('삭제하시겠습니까?')){
-                axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).catch(()=>{
+                axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).catch(()=>{
                   alert("데이터 전송이 실패하였습니다.");
                 }).then((result)=>{
                   console.log(result);

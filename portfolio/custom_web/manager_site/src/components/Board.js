@@ -27,7 +27,7 @@ function Board(){
   useMemo(()=>{
     return $.ajax({
       type: "GET",
-      url: "http://hunay.co.kr/portfolio/custom_web/get.php",
+      url: "https://hunay6650.cafe24.com/portfolio/custom_web/get.php",
       data: {
           table:'admin_board'
       },

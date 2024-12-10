@@ -23,7 +23,7 @@ function post_ajax(this_form, whats, contents, idfy){
     formData.append('title', contents);
   }
   
-  axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).then((result)=>{
+  axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).then((result)=>{
     console.log(result);
     alert('저장되었습니다');
   }).catch(()=>{

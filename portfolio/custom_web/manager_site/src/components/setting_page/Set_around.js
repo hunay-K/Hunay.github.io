@@ -42,7 +42,7 @@ function Set_around(){
     if(ticking == true || ticking == undefined){
       $.ajax({
         type: "GET",
-        url: "http://hunay.co.kr/portfolio/custom_web/slide.php",
+        url: "https://hunay6650.cafe24.com/portfolio/custom_web/slide.php",
         data: {
             table: 'slide_around'
         },
@@ -55,7 +55,7 @@ function Set_around(){
       });
       $.ajax({
         type: "GET",
-        url: "http://hunay.co.kr/portfolio/custom_web/get.php",
+        url: "https://hunay6650.cafe24.com/portfolio/custom_web/get.php",
         data: {
             table:'admin_around'
         },
@@ -240,7 +240,7 @@ function Set_around(){
                   let formData = new FormData(this_form);
                   formData.append('table', 'slide_around');
                   formData.append('code', 'slide');
-                  axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).then((result)=>{console.log(result); setTicking(true)}).catch(()=>{
+                  axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).then((result)=>{console.log(result); setTicking(true)}).catch(()=>{
                     alert("이미지를 추가할 수 없습니다.\n잠시 후에 다시 시도해주십시오.");
                   });
                   for (const [key, value] of formData.entries()) {
@@ -280,7 +280,7 @@ function Around_slide(props){
           formData.append('table', 'slide_around');
           formData.append('img_no', props.data[props.val].img_no);
           formData.append('purpose', 'del');
-          axios.post('http://hunay.co.kr/portfolio/custom_web/post.php', formData).then((result)=>{console.log(result);}).catch(()=>{
+          axios.post('https://hunay6650.cafe24.com/portfolio/custom_web/post.php', formData).then((result)=>{console.log(result);}).catch(()=>{
             alert("이미지를 삭제할 수 없습니다.\n잠시 후에 다시 시도해주십시오.");
           });
           for (const [key, value] of formData.entries()) {
